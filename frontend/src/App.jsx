@@ -4,7 +4,7 @@ import QueryBuilder from "./components/QueryBuilder";
 
 function App() {
   return (
-    <div>
+    <div> 
       <h1>Mini Data Platform</h1>
       <Upload />
       <QueryBuilder />
