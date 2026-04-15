@@ -11,7 +11,10 @@ Record.belongsTo(Dataset, {
   as: 'dataset',
 });
 
+const sequelize = require('../config/db');
+
 module.exports = {
+  sequelize,
   Dataset,
   Record,
 };

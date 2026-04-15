@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('mini_data', 'postgres', 'password', {
+// Using the exact credentials found in your old raw pg config file!
+const sequelize = new Sequelize('mini-data-platform', 'postgres', 'tushar', {
   host: 'localhost',
   dialect: 'postgres',
   logging: false,

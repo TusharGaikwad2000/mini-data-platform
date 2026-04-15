@@ -1,19 +1,18 @@
-exports.buildQuery = ({ filters, groupBy, aggregation }) => {
-  let where = "";
-  let values = [];
-  let index = 1;
+exports.buildQuery = ({ datasetId, filters, groupBy, aggregation }) => {
+  let whereStr = "dataset_id = $1";
+  let values = [datasetId];
+  let index = 2;
 
   if (filters) {
     Object.keys(filters).forEach((key) => {
-      where += `data->>'${key}' = $${index} AND `;
+      // Allow dynamic fields properly
+      whereStr += ` AND data->>'${key}' = $${index}`;
       values.push(filters[key]);
       index++;
     });
-    where = where.slice(0, -4);
   }
 
   let agg = "COUNT(*)";
-
   if (aggregation) {
     if (aggregation.type === "sum") {
       agg = `SUM((data->>'${aggregation.field}')::numeric)`;
@@ -21,14 +20,10 @@ exports.buildQuery = ({ filters, groupBy, aggregation }) => {
     if (aggregation.type === "avg") {
       agg = `AVG((data->>'${aggregation.field}')::numeric)`;
     }
-    if (aggregation.type === "count") {
-      agg = `COUNT(*)`;
-    }
   }
 
-  let query = `SELECT ${groupBy ? `data->>'${groupBy}',` : ""} ${agg} FROM datasets`;
+  let query = `SELECT ${groupBy ? `data->>'${groupBy}' AS "group",` : ""} ${agg} AS "value" FROM records WHERE ${whereStr}`;
 
-  if (where) query += ` WHERE ${where}`;
   if (groupBy) query += ` GROUP BY data->>'${groupBy}'`;
 
   return { query, values };
