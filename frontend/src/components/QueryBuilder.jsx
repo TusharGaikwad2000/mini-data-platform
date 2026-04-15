@@ -69,7 +69,7 @@ export default function QueryBuilder({ datasets, selectedDataset, setSelectedDat
           <div className="mb-6">
             <label className="block mb-2 text-slate-400 text-sm">Target Dataset</label>
             <select 
-              className="w-full bg-black/20 border border-white/10 text-slate-50 px-4 py-3 rounded-lg font-inherit transition-colors duration-200 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20" 
+              className="w-full bg-black/20 border border-white/10 text-slate-50 px-4 py-3 rounded-lg font-inherit transition-colors duration-200 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 [&_option]:bg-slate-900" 
               value={selectedDataset || ""} 
               onChange={(e) => setSelectedDataset(e.target.value)}
             >

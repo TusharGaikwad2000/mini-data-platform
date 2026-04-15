@@ -42,22 +42,24 @@ export default function Upload({ onUploadSuccess }) {
 
   return (
     <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl hover:border-white/20 transition-all duration-300 animate-[slideUp_0.6s_cubic-bezier(0.16,1,0.3,1)_forwards] [animation-delay:0.1s] mb-8">
-      <h2 className="mb-4 text-2xl font-semibold tracking-tight">Dataset Ingestion</h2>
-      <p className="text-slate-400 mb-6 text-sm">
+      <h2 className="mb-3 text-2xl font-semibold tracking-tight text-white">Dataset Ingestion</h2>
+      <p className="text-slate-400 mb-6 text-sm leading-relaxed">
         Upload your structured or unstructured JSON / CSV files. Schemas are entirely dynamic.
       </p>
 
-      <form onSubmit={handleUpload} className="flex flex-col sm:flex-row gap-4 items-center">
-        <input 
-          id="file-upload"
-          type="file" 
-          className="flex-grow w-full sm:w-auto bg-black/20 border border-white/10 text-slate-50 px-4 py-3 rounded-lg font-inherit transition-colors duration-200 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20" 
-          accept=".csv,.json"
-          onChange={(e) => setFile(e.target.files[0])} 
-        />
+      <form onSubmit={handleUpload} className="flex flex-col gap-4">
+        <div>
+          <input 
+            id="file-upload"
+            type="file" 
+            className="w-full bg-black/40 border border-white/10 text-slate-300 px-4 py-3 rounded-xl file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-white/10 file:text-white hover:file:bg-white/20 transition-all cursor-pointer focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/30" 
+            accept=".csv,.json"
+            onChange={(e) => setFile(e.target.files[0])} 
+          />
+        </div>
         <button 
           type="submit" 
-          className="w-full sm:w-auto bg-violet-500 text-white border-0 px-6 py-3 rounded-lg font-medium cursor-pointer transition-all duration-200 shadow-[0_4px_12px_rgba(139,92,246,0.2)] hover:bg-violet-600 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none whitespace-nowrap" 
+          className="mt-2 w-full bg-violet-600 text-white border-0 px-6 py-3.5 rounded-xl font-medium cursor-pointer transition-all duration-300 shadow-[0_4px_20px_rgba(124,58,237,0.3)] hover:bg-violet-500 hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none" 
           disabled={loading || !file}
         >
           {loading ? "Processing..." : "Upload Dataset"}
@@ -65,7 +67,7 @@ export default function Upload({ onUploadSuccess }) {
       </form>
 
       {error && (
-        <div className="mt-4 text-red-500 text-sm font-medium">
+        <div className="mt-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-sm font-medium">
           ⚠️ {error}
         </div>
       )}

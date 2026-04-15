@@ -25,23 +25,40 @@ export default function App() {
   }, []); // Run once on mount
 
   return (
-    <div className="max-w-[1200px] mx-auto py-12 px-6">
-      <h1 className="bg-gradient-to-r from-white to-violet-300 bg-clip-text text-transparent inline-block mb-8 text-4xl sm:text-5xl font-semibold tracking-tight animate-[slideUp_0.6s_cubic-bezier(0.16,1,0.3,1)_forwards]">InsightEngine™</h1>
+    <div className="relative min-h-screen w-full bg-black overflow-hidden font-sans">
+      {/* Background Orbs */}
+      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-violet-600/20 blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] rounded-full bg-fuchsia-600/10 blur-[100px] pointer-events-none"></div>
       
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-8 items-start">
-        <div className="flex-[1_1_350px]">
-          <Upload onUploadSuccess={(newId) => {
-             fetchDatasets();
-             setSelectedDataset(newId);
-          }} />
+      <div className="relative z-10 max-w-7xl mx-auto py-16 px-6 sm:px-12 lg:px-24 flex flex-col items-center">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 drop-shadow-2xl">
+            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+              InsightEngine™
+            </span>
+          </h1>
+          <p className="text-slate-400 text-lg sm:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+            Your premium dynamic data ingestion and transformation platform. 
+            Upload, query, and unlock insights instantly.
+          </p>
         </div>
         
-        <div className="flex-[2_1_600px]">
-          <QueryBuilder 
-            datasets={datasets} 
-            selectedDataset={selectedDataset}
-            setSelectedDataset={setSelectedDataset}
-          />
+        <div className="w-full flex flex-col xl:flex-row gap-8 items-start">
+          <div className="w-full xl:w-[420px] flex-shrink-0 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <Upload onUploadSuccess={(newId) => {
+               fetchDatasets();
+               setSelectedDataset(newId);
+            }} />
+          </div>
+          
+          <div className="w-full xl:flex-grow animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <QueryBuilder 
+              datasets={datasets} 
+              selectedDataset={selectedDataset}
+              setSelectedDataset={setSelectedDataset}
+            />
+          </div>
         </div>
       </div>
     </div>
