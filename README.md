@@ -148,3 +148,11 @@ Input:
 Aggregation Field: channel
 Output:
 Error: Invalid aggregation field
+
+## Data Flow
+
+1. User uploads CSV/JSON from frontend
+2. Backend parses file using middleware
+3. Data is stored in PostgreSQL using JSONB format
+4. Queries are dynamically generated using Sequelize
+5. Results are sent back and displayed in UI
