@@ -2,7 +2,7 @@
 
 A full-stack Mini Data Processing platform designed to handle dynamic data ingestion, run complex transformation engines, and provide an analytical overview through a stunning premium interface.
 
-## 📸 UI Preview
+## UI Preview
 
 ### Dashboard Overview
 ![Dashboard](screenshots/Screenshot-dashboard%202026-04-16%20090836.png)
@@ -70,7 +70,7 @@ The project originally used standard Vanilla CSS, but the frontend UI was migrat
 - **Failures in Parsing:** Wrapped inside Database Transactions. If bulk record creation crashes inside the SQL engine, the transaction strictly *rolls back* preventing empty "ghost" datasets from cluttering the schema.
 
 
-## 📊 Test Cases (sales_data.csv)
+## Test Cases (sales_data.csv)
 
 1. Total Revenue
 Input:
