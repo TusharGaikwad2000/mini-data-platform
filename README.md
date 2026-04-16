@@ -2,6 +2,14 @@
 
 A full-stack Mini Data Processing platform designed to handle dynamic data ingestion, run complex transformation engines, and provide an analytical overview through a stunning premium interface.
 
+## 📸 UI Preview
+
+### Dashboard Overview
+![Dashboard](screenshots/Screenshot-dashboard%202026-04-16%20090836.png)
+
+### Dynamic Query Execution
+![Query Engine](screenshots/Screenshot-run-query%202026-04-16%20091038.png)
+
 ## Tech Stack
 - **Frontend**: React.js, Vite, Axios, Tailwind CSS v4
 - **Backend**: Node.js, Express.js
