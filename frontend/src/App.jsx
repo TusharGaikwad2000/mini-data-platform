@@ -35,7 +35,7 @@ export default function App() {
         <div className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4 drop-shadow-2xl">
             <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-              InsightEngine™
+              InsightEngine
             </span>
           </h1>
           <p className="text-slate-400 text-lg sm:text-lg font-medium max-w-2xl mx-auto leading-relaxed">

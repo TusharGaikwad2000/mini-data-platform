@@ -1,0 +1,15 @@
+id,date,channel,region,product,category,revenue,quantity,user_id
+1,2026-01-01,Instagram,India,Shoes,Fashion,2500,2,101
+2,2026-01-02,Facebook,India,T-Shirt,Fashion,1200,3,102
+3,2026-01-03,Google,USA,Laptop,Electronics,55000,1,103
+4,2026-01-04,Instagram,India,Watch,Accessories,3000,1,104
+5,2026-01-05,Facebook,UK,Headphones,Electronics,4000,2,105
+6,2026-01-06,Google,India,Mobile,Electronics,20000,1,106
+7,2026-01-07,Instagram,USA,Shoes,Fashion,2700,2,107
+8,2026-01-08,Facebook,India,Watch,Accessories,3500,1,108
+9,2026-01-09,Google,UK,Laptop,Electronics,60000,1,109
+10,2026-01-10,Instagram,India,T-Shirt,Fashion,1500,2,110
+11,2026-01-11,Facebook,USA,Shoes,Fashion,2600,2,111
+12,2026-01-12,Google,India,Mobile,Electronics,22000,1,112
+13,2026-01-13,Instagram,UK,Watch,Accessories,3200,1,113
+14,2026-01-14,Facebook,India,T-Shirt,Fashion,1300,3,114

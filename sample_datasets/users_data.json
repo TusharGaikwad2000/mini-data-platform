@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Alice Smith", "age": 28, "department": "Engineering", "is_active": true },
+  { "id": 2, "name": "Bob Johnson", "age": 34, "department": "Marketing", "is_active": false },
+  { "id": 3, "name": "Charlie Brown", "age": 22, "department": "Sales", "is_active": true },
+  { "id": 4, "name": "Diana Prince", "age": 30, "department": "Engineering", "is_active": true }
+]
